@@ -13,7 +13,6 @@ List patterns -- i84
 File-local types -- MR
 Required members -- i84
 Auto-default structs -- MR
-Pattern match Span<char> on a constant string -- i84
 Extended nameof scope -- 
 Numeric IntPtr -- MR
 ref fields and scoped ref -- MR
@@ -24,4 +23,6 @@ Improved method group conversion to delegate -- MR
 ## Ref Fields and Scoped Refs
 
 
-## 
+## Pattern match Span<char> on a constant string
+
+https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/proposals/csharp-11.0/pattern-match-span-of-char-on-string

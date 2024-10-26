@@ -21,8 +21,4 @@
     <Using Include="Xunit" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Version11\" />
-  </ItemGroup>
-
 </Project>

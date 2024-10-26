@@ -11,15 +11,14 @@ public class PatternMatchSpan
     {
         // Arrange
         ReadOnlySpan<char> text = "This is an ReadOnlySpan<char>";
-        text = "Mo";
         
         // Act
         
         // Prior 11 Error: Possibly incorrect string comparison: spans are only equal when pointing to the same memory location. 
-        bool yes = text is "This is an ReadOnlySpan<char>";
+        bool isPatternMatched = text is "This is an ReadOnlySpan<char>";
         
         // Assert
-        yes.Should().BeTrue();
+        isPatternMatched.Should().BeTrue();
     }
 
 

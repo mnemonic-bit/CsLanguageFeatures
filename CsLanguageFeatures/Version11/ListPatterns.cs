@@ -47,6 +47,7 @@ public class ListPatterns
         if (numbers is [var variant5, .. var rest])
         {
             variant5.Should().Be(1);
+            rest.Should().BeEquivalentTo(new[] { 2, 3 });
         }
         
 

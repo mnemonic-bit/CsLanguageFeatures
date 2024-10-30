@@ -11,7 +11,7 @@ public class RequiredModifier
 
 
     [Fact]
-    public void rwewerwe()
+    public void Test1()
     {
         // Arrange
         PersonWithRequirementModifier person = new PersonWithRequirementModifier
@@ -39,7 +39,7 @@ public class RequiredModifier
     
     
     [Fact]
-    public void rwewerwe2()
+    public void Test2()
     {
         // Arrange
         PersonWithoutRequiredModifier person = new PersonWithoutRequiredModifier
@@ -62,5 +62,31 @@ public class RequiredModifier
         public string LastName { get; init; }
         public int Age { get; init; }
     }
-    
+
+    [Fact]
+    public void Test3()
+    {
+        // This won't work, because required properties
+        // must be initialized as property initializer.
+        /*var person = new PersonWithRequiredModifierAndConstructor("Joe", "User")
+        {
+            Age = 30
+        };*/
+    }
+
+    public class PersonWithRequiredModifierAndConstructor
+    {
+
+        public PersonWithRequiredModifierAndConstructor(string firstName, string lastName)
+        {
+            FirstName = firstName;
+            LastName = lastName;
+        }
+
+        public required string FirstName { get; init; }
+        public required string LastName { get; init; }
+        public required int Age { get; init; }
+
+    }
+
 }

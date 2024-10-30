@@ -5,8 +5,7 @@ namespace CsLanguageFeatures.Version11;
 public class ListPatterns
 {
     // List patterns extend pattern matching to match sequences of elements in a list or an array.
-    
-    
+
     [Fact]
     public void ListPatterns_ShouldPass_WhenListHasMoreThan3ElementsStartsWith1AndEndsWith5()
     {
@@ -24,9 +23,6 @@ public class ListPatterns
         result.Should().Be("List has more than 3 elements, starts with 1, and ends with 5.");
     }
     
-    
-    
-    
     [Fact]
     public void ListPattern_ShouldMatchPatternsCorrectly()
     {
@@ -36,7 +32,7 @@ public class ListPatterns
         // Assert
   
         var variant1 = numbers is [1, 2, 4]; 
-        var variant2 = numbers is[1, 2, 3];
+        var variant2 = numbers is [1, 2, 3];
         var variant3 = numbers is [0 or 1, <= 2, >= 3];
         var variant4 = numbers is [1, _, 3]; 
         variant1.Should().BeFalse();
@@ -48,8 +44,6 @@ public class ListPatterns
         {
             variant5.Should().Be(1);
         }
-        
-
     }
     
     [Theory]

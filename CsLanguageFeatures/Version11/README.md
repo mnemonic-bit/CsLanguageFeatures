@@ -5,9 +5,9 @@ This folder contains examples of all new features of the C# version 11.
 
 
 Raw string literals -- 
-Generic math support --
 UTF-8 string literals -- 
 Newlines in string interpolation expressions --
+Generic math support --
 Extended nameof scope -- 
 
 

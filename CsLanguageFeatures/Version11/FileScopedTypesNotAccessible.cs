@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CsLanguageFeatures.Version11
 {
-    public class FileScopedTypesCoda
+    public class FileScopedTypesNotAccessible
     {
 
         [Fact]

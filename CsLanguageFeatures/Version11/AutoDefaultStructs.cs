@@ -73,5 +73,6 @@ namespace CsLanguageFeatures.Version11
             public int UninitializedValue { get; set; }
 
         }
+
     }
 }

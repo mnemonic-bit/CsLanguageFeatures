@@ -6,7 +6,7 @@ namespace CsLanguageFeatures.Version12;
 
 /// <summary>
 /// Inline Arrays are a new feature in C# 12. They allow you to define an array
-/// It is mainly used for performance reasons by microsoft internally, as it allows the compiler to optimize
+/// It is mainly used for performance reasons by Microsoft internally, as it allows the compiler to optimize
 /// You as a developer won't use that normally not directly.
 /// </summary>
 public class InlineArray

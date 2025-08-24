@@ -1,4 +1,5 @@
 using FluentAssertions;
+using System.Net.Mail;
 
 namespace CsLanguageFeatures.Version11;
 
@@ -57,10 +58,30 @@ public class ListPatterns
         {
             [] => "no Name found",
             [var fullName] => $"My full name is: {fullName}",
-            [var firstName, var lastName] => $"My firstname and lastname is: {firstName} {lastName}"
+            [var firstName, var lastName] => $"My firstname and lastname is: {firstName} {lastName}",
+            _ => throw new Exception(),
         };
 
         text.Should().Be(expected);
+    }
+
+    [Theory]
+    [InlineData(new object[] { new object[] { "str" } })]
+    [InlineData(new object[] { new object[] { 1 } })]
+    [InlineData(new object[] { new object[] { "str", 1 } })]
+    [InlineData(new object[] { new object[] { "str", 1, "str" } })]
+    public void ListPattern_ShouldMatchPatternsCorrectly_WithDifferentInputs_(object[] objects)
+    {
+        var text = objects switch
+        {
+            [] => "no Name found",
+            [string firstValue] => $"My full name is: {firstValue}",
+            [int firstValue] => $"My full name is: {firstValue}",
+            [string firstValue, int secondValue] => $"My full name is: {firstValue}, {secondValue}",
+            [string firstValue, _, string secondValue] => $"My full name is: {firstValue}, {secondValue}",
+            [var firstName, var lastName] => $"My firstname and lastname is: {firstName} {lastName}",
+            _ => throw new Exception(),
+        };
     }
 
 }
